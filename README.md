@@ -34,7 +34,7 @@ npm install
 To start the development envrioment
 
 ```
-npm run dev
+npm run start
 ```
 
 The tests are working in the Truffle development enviroment

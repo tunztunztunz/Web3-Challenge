@@ -21,7 +21,6 @@ function App() {
   // retrieves and sets the account balance
   const setAccountBalance = async () => {
     if (web3) {
-      console.log('Setting balance...');
       const newBalance = await web3.eth.getBalance(account);
       setBalance(newBalance);
     }
@@ -83,7 +82,6 @@ function App() {
   useEffect(() => {
     const getTheCount = async () => {
       await getCount();
-      setAccountBalance();
     };
     getTheCount();
   });
@@ -100,6 +98,8 @@ function App() {
         });
       // run getCount here to update UI
       await getCount();
+      // update the account balance
+      setAccountBalance();
     } catch (e) {
       // Set it here in case the user rejects the increment
       setIncLoading(false);
@@ -120,6 +120,8 @@ function App() {
         });
       // run getCount to update UI
       await getCount();
+      // update the account balance
+      setAccountBalance();
     } catch (e) {
       // Set it here in case the user rejects the decrement
       setDecLoading(false);
