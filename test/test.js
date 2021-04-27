@@ -40,7 +40,6 @@ contract('Contact:', () => {
       await counter.methods.increment().send({ from: account });
       await counter.methods.increment().send({ from: account });
       count = Number(await counter.methods.getCount().call({ from: account }));
-      console.log(count);
       expect(count).to.be.eq(2);
     });
   });
@@ -48,7 +47,6 @@ contract('Contact:', () => {
     it('decrements the counter', async () => {
       await counter.methods.decrement().send({ from: account });
       count = Number(await counter.methods.getCount().call({ from: account }));
-      console.log(count);
       expect(count).to.be.eq(1);
     });
   });
